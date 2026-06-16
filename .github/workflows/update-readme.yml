@@ -31,10 +31,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet README.md; then
-            echo "No README changes."
+          if git diff --quiet assets/hero.svg; then
+            echo "No SVG changes."
           else
-            git add README.md
-            git commit -m "chore: update open source contributions"
+            git add assets/hero.svg
+            git commit -m "chore: update OSS contributions in hero.svg"
             git push
           fi
