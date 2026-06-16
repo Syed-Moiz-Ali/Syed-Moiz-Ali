@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Syed Moiz Ali — Flutter Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;--bg2:#0f0f0f;--bg3:#161616;
+  --border:rgba(255,255,255,0.06);--border-hi:rgba(255,255,255,0.11);
+  --text:#e8e8e8;--muted:#666;--dim:#3a3a3a;
+  --accent:#7C3AED;--accent2:#a78bfa;--accent3:rgba(124,58,237,0.10);
+  --mono:'DM Mono',monospace;--sans:'Syne',sans-serif;
+  --radius:10px;--tr:180ms cubic-bezier(0.16,1,0.3,1);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;overflow-x:hidden}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.022;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.orb{position:fixed;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.07) 0%,transparent 65%);top:-250px;right:-250px;pointer-events:none;z-index:0;animation:orbFloat 10s ease-in-out infinite}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,50px) scale(1.1)}}
+#prog{position:fixed;top:0;left:0;height:2px;width:0%;background:var(--accent);z-index:1000;transition:width 0.08s linear}
+.wrap{max-width:740px;margin:0 auto;padding:88px 32px 140px;position:relative;z-index:1}
+
+/* HERO */
+.hero{margin-bottom:88px}
+.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent2);margin-bottom:24px;display:flex;align-items:center;gap:12px;opacity:0;animation:fadeUp 0.6s ease forwards 0.05s}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--accent2)}
+.hero h1{font-family:var(--sans);font-size:clamp(48px,8vw,80px);font-weight:800;letter-spacing:-0.03em;line-height:1.0;color:#fff;margin-bottom:28px;opacity:0;animation:fadeUp 0.7s ease forwards 0.12s}
+.hero h1 em{color:var(--accent2);font-style:normal}
+.hero-desc{font-family:var(--mono);font-size:13px;color:var(--muted);line-height:1.85;max-width:440px;margin-bottom:36px;opacity:0;animation:fadeUp 0.7s ease forwards 0.2s}
+.cursor{display:inline-block;width:2px;height:0.95em;background:var(--accent2);margin-left:1px;vertical-align:text-bottom;animation:blink 1s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;opacity:0;animation:fadeUp 0.7s ease forwards 0.28s}
+.badge{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;padding:6px 16px;border-radius:100px;border:1px solid var(--border-hi);color:var(--muted);transition:all var(--tr)}
+.badge:hover{border-color:var(--accent);color:var(--accent2);background:var(--accent3)}
+.badge.live{border-color:rgba(74,222,128,0.3);color:#4ade80;background:rgba(74,222,128,0.06)}
+.badge.live::before{content:'';display:inline-block;width:6px;height:6px;background:#4ade80;border-radius:50%;margin-right:8px;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+.nav-links{display:flex;flex-wrap:wrap;gap:20px;opacity:0;animation:fadeUp 0.7s ease forwards 0.36s}
+.nav-link{font-family:var(--mono);font-size:12px;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color var(--tr)}
+.nav-link:hover{color:var(--text)}
+.nav-link svg{width:13px;height:13px;stroke-width:1.5;flex-shrink:0}
+
+/* LAYOUT */
+.div{height:1px;background:var(--border);margin:60px 0}
+.section{margin-bottom:80px;opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease}
+.section.in{opacity:1;transform:translateY(0)}
+.sec-label{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--dim);margin-bottom:32px;display:flex;align-items:center;gap:16px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.stat{background:var(--bg2);padding:28px 20px;text-align:center}
+.stat-n{font-family:var(--sans);font-size:36px;font-weight:800;color:#fff;letter-spacing:-0.04em;line-height:1;margin-bottom:10px}
+.stat-n span{color:var(--accent2)}
+.stat-l{font-family:var(--mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
+
+/* SKILL GRID */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.skill-cell{background:var(--bg2);padding:22px 24px;position:relative;overflow:hidden;transition:background var(--tr)}
+.skill-cell::after{content:'';position:absolute;inset:0;background:var(--accent3);opacity:0;transition:opacity var(--tr)}
+.skill-cell:hover::after{opacity:1}
+.skill-cat{font-family:var(--mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px;position:relative;z-index:1}
+.skill-tag{font-family:var(--mono);font-size:11px;color:var(--text);background:var(--bg3);padding:4px 10px;border-radius:4px;border:1px solid var(--border);transition:border-color var(--tr)}
+.skill-cell:hover .skill-tag{border-color:rgba(124,58,237,0.22)}
+
+/* WORK */
+.work-list{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.work-item{background:var(--bg2);padding:24px 28px;border-bottom:1px solid var(--border);transition:background var(--tr);position:relative;overflow:hidden}
+.work-item:last-child{border-bottom:none}
+.work-item:hover{background:var(--bg3)}
+.work-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform 0.25s ease}
+.work-item:hover::before{transform:scaleY(1)}
+.work-header{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;margin-bottom:12px}
+.work-role{font-family:var(--sans);font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.work-co{font-family:var(--mono);font-size:12px;color:var(--accent2)}
+.work-meta{font-family:var(--mono);font-size:11px;color:var(--dim);text-align:right;white-space:nowrap}
+.work-bullets{list-style:none;padding:0}
+.work-bullets li{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.75;padding-left:16px;position:relative;margin-bottom:4px}
+.work-bullets li::before{content:'—';position:absolute;left:0;color:var(--dim)}
+.work-bullets strong{color:var(--text)}
+
+/* PROJECTS */
+.proj-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.proj{background:var(--bg2);padding:26px 28px;display:grid;grid-template-columns:1fr 32px;gap:20px;align-items:start;position:relative;overflow:hidden;transition:background var(--tr);cursor:default}
+.proj::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform 0.25s ease}
+.proj:hover{background:var(--bg3)}
+.proj:hover::before{transform:scaleY(1)}
+.proj-name{font-family:var(--sans);font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:-0.01em}
+.proj-sub{font-family:var(--mono);font-size:11px;color:var(--accent2);margin-bottom:10px;letter-spacing:0.04em}
+.proj-desc{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.75;margin-bottom:16px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px}
+.proj-tag{font-family:var(--mono);font-size:10px;letter-spacing:0.05em;color:var(--accent2);background:rgba(124,58,237,0.09);padding:3px 10px;border-radius:4px}
+.proj-badge{font-family:var(--mono);font-size:10px;color:#4ade80;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);padding:3px 10px;border-radius:4px}
+.proj-icon{width:32px;height:32px;border:1px solid var(--border-hi);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--dim);flex-shrink:0;transition:all var(--tr);margin-top:2px}
+.proj:hover .proj-icon{border-color:var(--accent);color:var(--accent2);transform:translate(2px,-2px)}
+.proj-icon svg{width:12px;height:12px;stroke-width:2}
+
+/* ACHIEVEMENTS */
+.achieve-list{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.achieve-item{background:var(--bg2);padding:20px 28px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:16px;transition:background var(--tr)}
+.achieve-item:last-child{border-bottom:none}
+.achieve-item:hover{background:var(--bg3)}
+.achieve-dot{width:6px;height:6px;border-radius:50%;background:var(--accent2);flex-shrink:0;margin-top:5px}
+.achieve-text{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.7}
+.achieve-text strong{color:var(--text)}
+
+/* WHAT I BUILD */
+.build-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.build-cell{background:var(--bg2);padding:28px 24px;transition:background var(--tr)}
+.build-cell:hover{background:var(--bg3)}
+.build-icon{width:36px;height:36px;border:1px solid var(--border-hi);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--accent2);margin-bottom:16px}
+.build-icon svg{width:16px;height:16px;stroke-width:1.5}
+.build-title{font-family:var(--sans);font-size:13px;font-weight:700;color:#fff;margin-bottom:8px}
+.build-desc{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+
+/* CONTACT */
+.contact{border:1px solid var(--border);border-radius:var(--radius);padding:44px 40px;position:relative;overflow:hidden}
+.contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 100%,rgba(124,58,237,0.07) 0%,transparent 60%);pointer-events:none}
+.contact-h{font-family:var(--sans);font-size:32px;font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:8px;position:relative;z-index:1}
+.contact-sub{font-family:var(--mono);font-size:13px;color:var(--muted);margin-bottom:36px;position:relative;z-index:1}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;position:relative;z-index:1}
+.cta{font-family:var(--mono);font-size:12px;letter-spacing:0.06em;padding:12px 24px;border-radius:8px;border:1px solid var(--border-hi);color:var(--text);background:transparent;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:9px;transition:all var(--tr)}
+.cta:hover{background:var(--accent3);border-color:var(--accent);color:var(--accent2);transform:translateY(-1px)}
+.cta.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.cta.primary:hover{background:#6d28d9;border-color:#6d28d9;color:#fff;transform:translateY(-1px)}
+.cta svg{width:13px;height:13px;stroke-width:2;flex-shrink:0}
+
+/* FOOTER */
+.footer{text-align:center;padding-top:64px;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:0.12em;text-transform:uppercase}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:600px){
+  .wrap{padding:64px 20px 100px}
+  .hero h1{font-size:clamp(40px,12vw,56px)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .contact{padding:32px 24px}
+  .contact-h{font-size:26px}
+  .nav-links{gap:14px}
+  .work-header{grid-template-columns:1fr;gap:4px}
+  .work-meta{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<div class="orb"></div>
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">Flutter Developer &middot; Mobile App Engineer</div>
+    <h1>Syed<br>Moiz <em>Ali</em></h1>
+    <p class="hero-desc">
+      3+ years shipping production Flutter apps across gym management, e-commerce, and education.
+      Clean architecture, reusable components, measurable product impact.<span class="cursor"></span>
+    </p>
+    <div class="badges">
+      <span class="badge live">Open to work</span>
+      <span class="badge">Flutter &middot; Dart</span>
+      <span class="badge">Firebase</span>
+      <span class="badge">Riverpod</span>
+      <span class="badge">Node.js</span>
+      <span class="badge">On-device ML</span>
+      <span class="badge">Hyderabad, IN</span>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="tel:+918977904104">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.21 16z"/></svg>
+        +91-8977904104
+      </a>
+      <a class="nav-link" href="mailto:dev.syedmoizali@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        dev.syedmoizali@gmail.com
+      </a>
+      <a class="nav-link" href="https://linkedin.com/in/dev-syed-moiz-ali/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a class="nav-link" href="https://github.com/Syed-Moiz-Ali" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a class="nav-link" href="https://pub.dev/packages/internet_speed_meter" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        Pub.dev
+      </a>
+    </nav>
+  </section>
+
+  <div class="div"></div>
+
+  <!-- AT A GLANCE -->
+  <section class="section">
+    <div class="sec-label">at a glance</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-n"><span id="c1">0</span>+</div>
+        <div class="stat-l">Years Exp.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n"><span id="c2">0</span></div>
+        <div class="stat-l">Live Apps</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n"><span id="c3">0</span></div>
+        <div class="stat-l">Pkg Published</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n"><span id="c4">0</span>k+</div>
+        <div class="stat-l">Active Users</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section">
+    <div class="sec-label">technical skills</div>
+    <div class="skill-grid">
+      <div class="skill-cell">
+        <div class="skill-cat">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Dart</span><span class="skill-tag">Python</span>
+          <span class="skill-tag">TypeScript</span><span class="skill-tag">JavaScript</span><span class="skill-tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">Mobile</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Flutter</span><span class="skill-tag">Android</span>
+          <span class="skill-tag">iOS</span><span class="skill-tag">Web</span><span class="skill-tag">Kotlin</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">State Management</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Riverpod</span><span class="skill-tag">Provider</span><span class="skill-tag">BLoC</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">Backend &amp; APIs</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Node.js</span><span class="skill-tag">Express</span>
+          <span class="skill-tag">REST</span><span class="skill-tag">WebSocket</span><span class="skill-tag">WebRTC</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">Cloud &amp; Database</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Firebase</span><span class="skill-tag">Firestore</span>
+          <span class="skill-tag">FCM</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">AI / ML</div>
+        <div class="skill-tags">
+          <span class="skill-tag">TFLite</span><span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">ONNX</span><span class="skill-tag">Colab</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Git</span><span class="skill-tag">Figma</span>
+          <span class="skill-tag">VS Code</span><span class="skill-tag">Postman</span><span class="skill-tag">Xcode</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <div class="sec-label">experience</div>
+    <div class="work-list">
+
+      <div class="work-item">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Flutter Developer</div>
+            <div class="work-co">Axonaio Technologies Pvt. Ltd.</div>
+          </div>
+          <div class="work-meta">Oct 2024 &rarr; Present<br/>Hyderabad &middot; Full-time</div>
+        </div>
+        <ul class="work-bullets">
+          <li>Built and shipped <strong>Trainera</strong> — two live Flutter apps (user + trainer) on Google Play Store and Apple App Store.</li>
+          <li>User app: gym discovery, membership management, workout scheduling, trainer booking, in-app payments.</li>
+          <li>Trainer app: client management, attendance tracking, session scheduling, earnings analytics.</li>
+          <li>Developed <strong>Indishoppe</strong> — fashion e-commerce app with filters, wishlist, cart, order tracking, and Razorpay/UPI payments.</li>
+          <li>Implemented Firebase Firestore real-time updates, Auth, and FCM notifications across production apps.</li>
+          <li>Reduced feature development time by <strong>40%</strong> through reusable widget systems and clean architecture.</li>
+        </ul>
+      </div>
+
+      <div class="work-item">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Flutter Developer</div>
+            <div class="work-co">mTouch Labs Pvt. Ltd.</div>
+          </div>
+          <div class="work-meta">Jun 2024 &rarr; Oct 2024<br/>Hyderabad &middot; Full-time</div>
+        </div>
+        <ul class="work-bullets">
+          <li>Contributed to <strong>Bandham Matrimonial App</strong> — Flutter frontend and Node.js/Firebase backend integration.</li>
+          <li>Translated Figma wireframes into responsive Flutter screens, improving UI delivery speed.</li>
+          <li>Integrated notifications and payment flows using reusable modules, reducing integration effort by <strong>40%</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="work-item">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Flutter Developer</div>
+            <div class="work-co">TechWebLabs</div>
+          </div>
+          <div class="work-meta">Jan 2023 &rarr; Jun 2024<br/>Hyderabad &middot; Full-time</div>
+        </div>
+        <ul class="work-bullets">
+          <li>Built cross-platform Flutter apps for Android and Web serving <strong>1,000+ active users</strong> across e-commerce and service clients.</li>
+          <li>Implemented Riverpod and Provider state management, reducing bug resolution time by <strong>35%</strong>.</li>
+          <li>Optimized app load time by <strong>40%</strong> through lazy loading, image caching, and widget-tree improvements.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section">
+    <div class="sec-label">projects &amp; open source</div>
+    <div class="proj-list">
+
+      <div class="proj">
+        <div>
+          <div class="proj-name">internet_speed_meter</div>
+          <div class="proj-sub">Flutter Package &middot; Pub.dev</div>
+          <div class="proj-desc">Open-source Flutter package that monitors internet speed in real time inside Flutter apps. Built with Flutter SDK, Kotlin (native Android), and Dart for reusable integration.</div>
+          <div class="proj-tags">
+            <span class="proj-badge">● Live on Pub.dev</span>
+            <span class="proj-tag">Flutter</span><span class="proj-tag">Kotlin</span><span class="proj-tag">Dart</span>
+          </div>
+        </div>
+        <a class="proj-icon" href="https://pub.dev/packages/internet_speed_meter" target="_blank" rel="noopener" aria-label="View on Pub.dev">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+
+      <div class="proj">
+        <div>
+          <div class="proj-name">Trainera — Gym Management</div>
+          <div class="proj-sub">Flutter &middot; Firebase &middot; Razorpay</div>
+          <div class="proj-desc">Two-app ecosystem — user app for memberships, scheduling, and payments; trainer app for client and earnings management. Firebase sync, FCM, and Razorpay payment integration.</div>
+          <div class="proj-tags">
+            <a href="https://play.google.com/store/apps/details?id=com.tefc.trainera" target="_blank" rel="noopener" style="text-decoration:none"><span class="proj-badge">● Play Store</span></a>&nbsp;<a href="https://apps.apple.com/us/app/tefc-built-by-effort/id6751433714" target="_blank" rel="noopener" style="text-decoration:none"><span class="proj-badge">● App Store</span></a>
+            <span class="proj-tag">Flutter</span><span class="proj-tag">Firebase</span><span class="proj-tag">Razorpay</span><span class="proj-tag">FCM</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;margin-top:2px">
+          <a class="proj-icon" href="https://play.google.com/store/apps/details?id=com.tefc.trainera" target="_blank" rel="noopener" title="Google Play">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </a>
+          <a class="proj-icon" href="https://apps.apple.com/us/app/tefc-built-by-effort/id6751433714" target="_blank" rel="noopener" title="App Store">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M9 12h6M12 9v6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="proj">
+        <div>
+          <div class="proj-name">Indishoppe — Fashion E-Commerce</div>
+          <div class="proj-sub">Flutter &middot; Firebase &middot; Razorpay &middot; FCM</div>
+          <div class="proj-desc">Live Play Store app with product catalog, filters, wishlist, cart, order tracking, and payment gateway. Firestore used for real-time inventory and order updates.</div>
+          <div class="proj-tags">
+            <a href="https://play.google.com/store/apps/details?id=com.indishoppe.indishoppe" target="_blank" rel="noopener" style="text-decoration:none"><span class="proj-badge">● Play Store</span></a>
+            <span class="proj-tag">Flutter</span><span class="proj-tag">Firestore</span><span class="proj-tag">Razorpay</span><span class="proj-tag">UPI</span>
+          </div>
+        </div>
+        <a class="proj-icon" href="https://play.google.com/store/apps/details?id=com.indishoppe.indishoppe" target="_blank" rel="noopener" title="Google Play">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="5 3 19 12 5 21 5 3" stroke-width="2"/></svg>
+        </a>
+      </div>
+
+      <div class="proj">
+        <div>
+          <div class="proj-name">BluePen — College Application Portal</div>
+          <div class="proj-sub">Flutter &middot; Firebase &middot; Node.js &middot; Razorpay</div>
+          <div class="proj-desc">Education portal for students to explore colleges, choose branches, submit applications, pay fees, and track admission progress in real time. Includes scholarship workflows and status tracking.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Flutter</span><span class="proj-tag">Firebase</span><span class="proj-tag">Node.js</span><span class="proj-tag">Razorpay</span>
+          </div>
+        </div>
+        <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT I BUILD -->
+  <section class="section">
+    <div class="sec-label">what i build</div>
+    <div class="build-grid">
+      <div class="build-cell">
+        <div class="build-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <div class="build-title">Production Apps</div>
+        <div class="build-desc">Live apps on Play Store and App Store — gym, e-commerce, and education platforms with real users.</div>
+      </div>
+      <div class="build-cell">
+        <div class="build-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="build-title">Real-Time Systems</div>
+        <div class="build-desc">WebSocket feeds, Firestore live sync, FCM — apps that react instantly to data changes.</div>
+      </div>
+      <div class="build-cell">
+        <div class="build-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div class="build-title">Clean Architecture</div>
+        <div class="build-desc">Feature-first, layered patterns with Riverpod — scalable and maintainable at any size.</div>
+      </div>
+      <div class="build-cell">
+        <div class="build-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <div class="build-title">On-Device AI / ML</div>
+        <div class="build-desc">TFLite model integration with INT8/FLOAT16 quantization — inference that runs offline.</div>
+      </div>
+      <div class="build-cell">
+        <div class="build-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <div class="build-title">Payment Integration</div>
+        <div class="build-desc">Razorpay, UPI, and in-app payment flows — production-grade across multiple live apps.</div>
+      </div>
+      <div class="build-cell">
+        <div class="build-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg></div>
+        <div class="build-title">Open Source</div>
+        <div class="build-desc">Published Flutter packages on Pub.dev — internet_speed_meter available for community use.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section">
+    <div class="sec-label">certifications &amp; achievements</div>
+    <div class="achieve-list">
+      <div class="achieve-item">
+        <div class="achieve-dot"></div>
+        <div class="achieve-text"><strong>Pub.dev Package Author</strong> — Published <code>internet_speed_meter</code> on Pub.dev for real-time speed monitoring in Flutter apps.</div>
+      </div>
+      <div class="achieve-item">
+        <div class="achieve-dot"></div>
+        <div class="achieve-text"><strong>Live Mobile Apps</strong> — Trainera is live on both Google Play Store and Apple App Store.</div>
+      </div>
+      <div class="achieve-item">
+        <div class="achieve-dot"></div>
+        <div class="achieve-text"><strong>Live E-Commerce App</strong> — Indishoppe is live on Google Play Store with active users and real transactions.</div>
+      </div>
+      <div class="achieve-item">
+        <div class="achieve-dot"></div>
+        <div class="achieve-text"><strong>Self-Taught Developer</strong> — Built expertise in Flutter, Firebase, Node.js, Python, and on-device ML through project-based learning.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section">
+    <div class="contact">
+      <div class="contact-h">Let's build something.</div>
+      <div class="contact-sub">Open to Flutter Developer and Mobile App Engineer roles. Remote-friendly.</div>
+      <div class="cta-row">
+        <a class="cta primary" href="mailto:dev.syedmoizali@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          Send an email
+        </a>
+        <a class="cta" href="https://linkedin.com/in/dev-syed-moiz-ali/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="cta" href="https://github.com/Syed-Moiz-Ali" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a class="cta" href="https://pub.dev/packages/internet_speed_meter" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Pub.dev
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="div"></div>
+  <footer class="footer">Syed Moiz Ali &nbsp;&middot;&nbsp; Flutter Developer &nbsp;&middot;&nbsp; Hyderabad, India &nbsp;&middot;&nbsp; 2026</footer>
+
+</div>
+
+<script>
+const prog = document.getElementById('prog');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  prog.style.width = Math.min(pct, 100) + '%';
+}, { passive: true });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+}, { threshold: 0.06 });
+document.querySelectorAll('.section').forEach((s, i) => {
+  s.style.transitionDelay = (i * 0.03) + 's';
+  observer.observe(s);
+});
+
+function countUp(el, target, delay, suffix) {
+  const step = Math.ceil(target / 36);
+  setTimeout(() => {
+    let v = 0;
+    const t = setInterval(() => {
+      v = Math.min(v + step, target);
+      el.textContent = v;
+      if (v >= target) clearInterval(t);
+    }, 30);
+  }, delay);
+}
+const statsObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    countUp(document.getElementById('c1'), 3, 0);
+    countUp(document.getElementById('c2'), 3, 120);
+    countUp(document.getElementById('c3'), 1, 240);
+    countUp(document.getElementById('c4'), 1, 360);
+    statsObs.disconnect();
+  }
+}, { threshold: 0.5 });
+statsObs.observe(document.querySelector('.stats'));
+</script>
+</body>
+</html>
