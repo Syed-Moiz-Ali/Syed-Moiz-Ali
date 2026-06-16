@@ -105,11 +105,9 @@ I build Flutter applications end-to-end — from pixel-perfect UI to backend API
 ## Open Source Contributions
 
 <!-- OSS-CONTRIBUTIONS:START -->
-
 | Repository | Merged PRs | Recent Work |
-|---|---|---|
-| Loading from GitHub Actions... | - | This section updates automatically when the workflow runs. |
-
+|---|---:|---|
+| No merged PRs found yet | - | Start contributing and this section will update automatically |
 <!-- OSS-CONTRIBUTIONS:END -->
 
 ---
