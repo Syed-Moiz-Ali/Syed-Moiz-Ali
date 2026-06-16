@@ -17,14 +17,10 @@ const headers = {
 async function fetchMergedPRs() {
   const query = encodeURIComponent(`author:${username} type:pr is:merged`);
   const url = `https://api.github.com/search/issues?q=${query}&sort=updated&order=desc&per_page=100`;
-
   const response = await fetch(url, { headers });
-
   if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`GitHub API error: ${response.status} ${errorText}`);
+    throw new Error(`GitHub API error: ${response.status} ${await response.text()}`);
   }
-
   const data = await response.json();
   return data.items || [];
 }
@@ -38,36 +34,34 @@ function escapeXml(text) {
 }
 
 function buildSvgContent(prs) {
+  const mono = "'JetBrains Mono','Fira Code',monospace";
+
   if (!prs.length) {
-    return `<text x="74" y="1540" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">No merged PRs found yet.</text>`;
+    return `<text x="74" y="1540" fill="#555" font-family="${mono}" font-size="11">No merged PRs found yet. Start contributing and this updates daily.</text>`;
   }
 
   const grouped = new Map();
-
   for (const pr of prs) {
     const repo = getRepositoryName(pr);
-    if (!grouped.has(repo)) {
-      grouped.set(repo, []);
-    }
+    if (!grouped.has(repo)) grouped.set(repo, []);
     grouped.get(repo).push(pr);
   }
 
   const lines = [];
   let y = 1505;
-  const startY = y;
 
   for (const [repo, repoPRs] of grouped.entries()) {
     if (y > 1630) break;
 
     const short = repo.replace(`${username}/`, "");
     const recent = repoPRs.slice(0, 2).map((pr) =>
-      `<a href="${pr.html_url}"><text fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="10" text-decoration="underline">${escapeXml(pr.title)}</text></a>`
-    ).join(`<text fill="#555" font-family="'JetBrains Mono',monospace" font-size="10"> · </text>`);
+      `<text fill="#A78BFA" font-family="${mono}" font-size="10">${escapeXml(pr.title)}</text>`
+    ).join(`<text fill="#555" font-family="${mono}" font-size="10"> · </text>`);
 
     lines.push(`<rect x="72" y="${y}" width="856" height="1" fill="rgba(255,255,255,0.03)"/>`);
     lines.push(`<text x="74" y="${y + 14}" fill="#E8E8E8" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="500">${escapeXml(short)}</text>`);
-    lines.push(`<text x="500" y="${y + 14}" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="10">${repoPRs.length} merged PRs</text>`);
-    lines.push(`<text x="74" y="${y + 34}" fill="#555" font-family="'JetBrains Mono',monospace" font-size="10">Recent: ${recent}</text>`);
+    lines.push(`<text x="500" y="${y + 14}" fill="#A78BFA" font-family="${mono}" font-size="10">${repoPRs.length} merged PRs</text>`);
+    lines.push(`<text x="74" y="${y + 34}" fill="#555" font-family="${mono}" font-size="10">Recent: ${recent}</text>`);
 
     y += 40;
   }
@@ -77,10 +71,8 @@ function buildSvgContent(prs) {
 
 function updateSvg(section) {
   const svg = fs.readFileSync(svgPath, "utf8");
-
   const start = "<!-- OSS-CONTRIBUTIONS:START -->";
   const end = "<!-- OSS-CONTRIBUTIONS:END -->";
-
   const pattern = new RegExp(`${start}[\\s\\S]*?${end}`);
 
   if (!pattern.test(svg)) {
@@ -89,11 +81,16 @@ function updateSvg(section) {
 
   const updated = svg.replace(pattern, `${start}\n  ${section}\n  ${end}`);
 
+  if (updated === svg) {
+    console.log("No changes to hero.svg");
+    return false;
+  }
+
   fs.writeFileSync(svgPath, updated);
+  return true;
 }
 
 const prs = await fetchMergedPRs();
 const section = buildSvgContent(prs);
-updateSvg(section);
-
-console.log(`Updated hero.svg with ${prs.length} merged PRs.`);
+const changed = updateSvg(section);
+console.log(changed ? `Updated hero.svg with ${prs.length} merged PRs.` : "No changes needed.");
