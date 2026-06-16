@@ -13,8 +13,8 @@
   <a href="mailto:dev.syedmoizali@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
-  <a>
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&label=ADD+YOUR+URL" />
+  <a href="https://www.linkedin.com/in/dev-syed-moiz-ali/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
   <br />
   <img src="https://komarev.com/ghpvc/?username=Syed-Moiz-Ali&style=for-the-badge&color=4F46E5&label=Profile+Views" />
@@ -136,7 +136,7 @@ class SyedMoizAli extends Developer {
   <a href="mailto:dev.syedmoizali@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
-  <a>
+  <a href="https://www.linkedin.com/in/dev-syed-moiz-ali/">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
   <a href="https://github.com/Syed-Moiz-Ali">
