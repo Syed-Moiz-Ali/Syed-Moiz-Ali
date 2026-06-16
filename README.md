@@ -1,17 +1,24 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Syed%20Moiz%20Ali&fontSize=50&fontAlignY=35&animation=fadeIn" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=220&section=header&text=Syed%20Moiz%20Ali&fontSize=50&fontAlignY=35&animation=fadeIn&fontColor=ffffff" width="100%" />
 </div>
 
-<h3 align="center">Flutter Developer | Open Source Contributor | Full-Stack Builder</h3>
+<h3 align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3000&pause=1000&color=4F46E5&center=true&vCenter=true&width=600&lines=Flutter+Developer;Open+Source+Contributor;Full-Stack+Mobile+Engineer" alt="Typing SVG" />
+</h3>
 
 <div align="center">
   <a href="https://github.com/Syed-Moiz-Ali">
-    <img src="https://img.shields.io/github/followers/Syed-Moiz-Ali?style=for-the-badge&logo=github&label=Followers" />
+    <img src="https://img.shields.io/github/followers/Syed-Moiz-Ali?style=for-the-badge&logo=github&logoColor=white&label=Followers&color=181717" />
   </a>
   <a href="mailto:dev.syedmoizali@gmail.com">
-    <img src="https://img.shields.io/badge/Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
-  <img src="https://komarev.com/ghpvc/?username=Syed-Moiz-Ali&style=for-the-badge&color=blue" />
+  <a>
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&label=ADD+YOUR+URL" />
+  </a>
+  <br />
+  <img src="https://komarev.com/ghpvc/?username=Syed-Moiz-Ali&style=for-the-badge&color=4F46E5&label=Profile+Views" />
+  <img src="https://img.shields.io/badge/Open%20to%20Work-Yes-success?style=for-the-badge" />
 </div>
 
 ---
@@ -19,23 +26,27 @@
 ### About Me
 
 ```dart
-class Developer {
-  final String name = "Syed Moiz Ali";
+class SyedMoizAli extends Developer {
+  final String title = "Flutter Developer";
+  final String location = "Remote / On-site";
+  final bool openToWork = true;
+
   final List<String> skills = [
     "Flutter", "Dart", "Node.js", "Python",
     "TypeScript", "Firebase", "REST APIs"
   ];
-  final String focus = "Building cross-platform mobile experiences";
-  final bool openToWork = true;
-  
-  String greet() => "Let's build something amazing!";
+
+  final String currentFocus = "Building cross-platform mobile experiences";
+  final int openSourcePRs = 6;
+
+  String philosophy() => "Write clean code, ship fast, make an impact.";
 }
 ```
 
-- Building cross-platform mobile apps with **Flutter & Dart**
-- Backend development with **Node.js, Python & TypeScript**
-- Open source contributor with **6 merged PRs**
-- Passionate about clean code, UI/UX, and performance
+- **Currently working on:** Full-stack Flutter projects with Node.js backends
+- **Open source:** 6 merged PRs across multiple projects
+- **Looking for:** Software Engineer / Flutter Developer roles
+- **Portfolio:** [github.com/Syed-Moiz-Ali](https://github.com/Syed-Moiz-Ali)
 
 ---
 
@@ -52,6 +63,10 @@ class Developer {
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
+  <br />
+  <img src="https://img.shields.io/badge/Riverpod-7612E1?style=for-the-badge&logo=dart&logoColor=white" />
+  <img src="https://img.shields.io/badge/Hive-FF7A00?style=for-the-badge&logo=hive&logoColor=white" />
+  <img src="https://img.shields.io/badge/Dio-0082C9?style=for-the-badge&logo=dart&logoColor=white" />
 </div>
 
 ---
@@ -73,45 +88,65 @@ class Developer {
   </a>
 </div>
 
-> Note: Some of my projects are private for client work. Reach out to see more!
+> Some projects are private for client work. Reach out to see more!
 
 ---
 
 ### Open Source Contributions
 
-| Project | PRs | Description |
-|---------|-----|-------------|
-| [nullfeed-flutter](https://github.com/Syed-Moiz-Ali/nullfeed-flutter) | 5 Merged | Video player fixes, performance throttle, state management, progress consolidation |
-| [flockui](https://github.com/Syed-Moiz-Ali/flockui) | 1 Merged | Added outlined button variant to Flutter UI component library |
+| Project | PRs | Impact |
+|---------|-----|--------|
+| [nullfeed-flutter](https://github.com/Syed-Moiz-Ali/nullfeed-flutter) | 5 Merged | Fixed crashes, performance issues, duplicate API calls, and state management bugs in a video player Flutter app |
+| [flockui](https://github.com/Syed-Moiz-Ali/flockui) | 1 Merged | Added outlined button variant to a Flutter UI component library |
 
 ---
 
-### GitHub Analytics
+### GitHub Trophies
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Syed-Moiz-Ali&theme=darkhub&no-frame=true&row=1&column=6" width="100%" />
+</div>
+
+---
+
+### GitHub Stats
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Syed-Moiz-Ali&show_icons=true&theme=dark&border_radius=10&count_private=true&include_all_commits=true" height="170" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Syed-Moiz-Ali&layout=compact&theme=dark&border_radius=10" height="170" />
-  <br />
+</div>
+
+<div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Syed-Moiz-Ali&theme=dark&border_radius=10" width="70%" />
 </div>
 
 ---
 
-### Recent Activity
+### Contribution Graph
 
-<!--START_SECTION:activity-->
-* Created 6 pull requests across open source projects
-* Contributed to nullfeed-flutter (Flutter/Dart)
-* Contributed to flockui (Flutter UI library)
-<!--END_SECTION:activity-->
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Syed-Moiz-Ali&theme=react-dark&hide_border=true&radius=10" width="100%" />
+</div>
 
 ---
 
+### Let's Connect
+
 <div align="center">
+  <a href="mailto:dev.syedmoizali@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a>
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://github.com/Syed-Moiz-Ali">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</div>
+
+<div align="center">
+  <br />
+  <strong>Open to work — let's build something amazing together.</strong>
+  <br />
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&section=footer" width="100%" />
-  <br />
-  <strong>Let's connect and build something amazing together.</strong>
-  <br />
-  <a href="https://github.com/Syed-Moiz-Ali">GitHub</a> |
-  <a href="mailto:dev.syedmoizali@gmail.com">Email</a>
 </div>
