@@ -59,19 +59,21 @@ class Developer {
 ### Featured Projects
 
 <div align="center">
-  <a href="https://github.com/Syed-Moiz-Ali/turf_user">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Syed-Moiz-Ali&repo=turf_user&theme=dark&border_radius=10" />
+  <a href="https://github.com/Syed-Moiz-Ali/nullfeed-flutter">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Syed-Moiz-Ali&repo=nullfeed-flutter&theme=dark&border_radius=10" />
   </a>
   <a href="https://github.com/Syed-Moiz-Ali/gunpla_hub">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=Syed-Moiz-Ali&repo=gunpla_hub&theme=dark&border_radius=10" />
   </a>
-  <a href="https://github.com/Syed-Moiz-Ali/KiranaTracker">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Syed-Moiz-Ali&repo=KiranaTracker&theme=dark&border_radius=10" />
+  <a href="https://github.com/Syed-Moiz-Ali/KiranaInventoryTracker">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Syed-Moiz-Ali&repo=KiranaInventoryTracker&theme=dark&border_radius=10" />
   </a>
-  <a href="https://github.com/Syed-Moiz-Ali/smc-trading-engine">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Syed-Moiz-Ali&repo=smc-trading-engine&theme=dark&border_radius=10" />
+  <a href="https://github.com/Syed-Moiz-Ali/flockui">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Syed-Moiz-Ali&repo=flockui&theme=dark&border_radius=10" />
   </a>
 </div>
+
+> Note: Some of my projects are private for client work. Reach out to see more!
 
 ---
 
