@@ -1,19 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1600" viewBox="0 0 1000 1600">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1660" viewBox="0 0 1000 1660">
   <defs>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.07"/>
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.06"/>
       <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#7C3AED"/>
       <stop offset="100%" stop-color="#A78BFA"/>
     </linearGradient>
-    <linearGradient id="pillBg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#161616"/>
-      <stop offset="100%" stop-color="#0f0f0f"/>
-    </linearGradient>
-    <linearGradient id="contactGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.06"/>
+    <linearGradient id="contactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.08"/>
       <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
     </linearGradient>
     <filter id="noise">
@@ -23,277 +23,250 @@
   </defs>
 
   <!-- BG -->
-  <rect width="1000" height="1600" fill="#080808"/>
-  <rect width="1000" height="1600" fill="#080808" filter="url(#noise)" opacity="0.018"/>
+  <rect width="1000" height="1660" fill="#080808"/>
+  <rect width="1000" height="1660" fill="#080808" filter="url(#noise)" opacity="0.015"/>
 
-  <!-- Glow orb -->
+  <!-- Glow orbs -->
   <g>
-    <animateTransform attributeName="transform" type="translate" values="0,0;-25,35;0,0" dur="8s" repeatCount="indefinite"/>
-    <circle cx="800" cy="100" r="350" fill="url(#glow)"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-20,30;0,0" dur="8s" repeatCount="indefinite"/>
+    <circle cx="800" cy="60" r="350" fill="url(#glow)"/>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;20,-20;0,0" dur="10s" repeatCount="indefinite"/>
+    <circle cx="200" cy="1400" r="250" fill="url(#glow2)"/>
   </g>
 
-  <!-- ===== HERO ===== -->
-  <!-- Tag -->
-  <text x="50" y="72" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11" letter-spacing="2.5">Flutter Developer · Mobile Engineer</text>
+  <!-- ════════════════════════════ HERO ════════════════════════════ -->
+  <text x="50" y="65" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="3">FLUTTER DEVELOPER · MOBILE ENGINEER</text>
 
-  <!-- Name -->
-  <text x="50" y="145" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="52" font-weight="800" letter-spacing="-2">Syed Moiz</text>
-  <text x="50" y="195" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="52" font-weight="800" letter-spacing="-2">Ali</text>
+  <text x="50" y="140" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="56" font-weight="800" letter-spacing="-2.5">Syed Moiz</text>
+  <text x="50" y="190" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="56" font-weight="800" letter-spacing="-2.5">Ali<span fill="url(#accent)">.</span></text>
 
-  <!-- Accent char -->
-  <text x="155" y="195" fill="url(#accentGrad)" font-family="system-ui,-apple-system,sans-serif" font-size="52" font-weight="800" letter-spacing="-2">.</text>
+  <text x="460" y="140" fill="#555" font-family="'JetBrains Mono',monospace" font-size="13">Building clean, scalable Flutter apps</text>
+  <text x="460" y="162" fill="#555" font-family="'JetBrains Mono',monospace" font-size="13">with modern UI, APIs, Firebase,</text>
+  <text x="460" y="184" fill="#555" font-family="'JetBrains Mono',monospace" font-size="13">and reliable state management.</text>
 
-  <!-- Subtitle -->
-  <text x="460" y="145" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="13">Building clean, scalable Flutter apps</text>
-  <text x="460" y="166" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="13">with modern UI, APIs, Firebase,</text>
-  <text x="460" y="187" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="13">and reliable state management.</text>
-
-  <!-- Cursor -->
-  <rect x="870" y="149" width="2" height="14" fill="#A78BFA">
+  <!-- Cursor (positioned right after last text line) -->
+  <rect x="836" y="147" width="2" height="14" fill="#A78BFA">
     <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
   </rect>
 
   <!-- Badges -->
   <g transform="translate(50,230)">
-    <!-- Open to work -->
-    <rect x="0" y="0" width="120" height="28" rx="14" fill="none" stroke="rgba(34,197,94,0.3)" stroke-width="1"/>
+    <rect x="0" y="0" width="116" height="28" rx="14" fill="none" stroke="rgba(34,197,94,0.3)" stroke-width="1"/>
     <circle cx="18" cy="14" r="3" fill="#4ADE80">
-      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="3;2.5;3" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="3;2.4;3" dur="2s" repeatCount="indefinite"/>
     </circle>
-    <text x="28" y="18" fill="#4ADE80" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11" letter-spacing="1">Open to work</text>
+    <text x="28" y="18" fill="#4ADE80" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="1">Open to work</text>
 
-    <!-- Flutter Dart -->
-    <rect x="135" y="0" width="130" height="28" rx="14" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <text x="200" y="18" text-anchor="middle" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11" letter-spacing="1">Flutter · Dart</text>
+    <rect x="130" y="0" width="122" height="28" rx="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="191" y="18" text-anchor="middle" fill="#666" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="1">Flutter · Dart</text>
 
-    <!-- Firebase -->
-    <rect x="280" y="0" width="90" height="28" rx="14" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <text x="325" y="18" text-anchor="middle" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11" letter-spacing="1">Firebase</text>
+    <rect x="266" y="0" width="82" height="28" rx="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="307" y="18" text-anchor="middle" fill="#666" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="1">Firebase</text>
 
-    <!-- REST APIs -->
-    <rect x="385" y="0" width="100" height="28" rx="14" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <text x="435" y="18" text-anchor="middle" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11" letter-spacing="1">REST APIs</text>
+    <rect x="362" y="0" width="96" height="28" rx="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="410" y="18" text-anchor="middle" fill="#666" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="1">REST APIs</text>
 
-    <!-- Riverpod -->
-    <rect x="500" y="0" width="95" height="28" rx="14" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <text x="547" y="18" text-anchor="middle" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11" letter-spacing="1">Riverpod</text>
+    <rect x="472" y="0" width="90" height="28" rx="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="517" y="18" text-anchor="middle" fill="#666" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="1">Riverpod</text>
   </g>
 
   <!-- Links -->
   <g transform="translate(50,285)">
-    <!-- Email -->
-    <a href="mailto:dev.syedmoizali@gmail.com">
-      <text x="0" y="12" fill="#444" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">
-        <!-- envelope icon -->
-        <tspan>✉</tspan>
-        <tspan dx="8">Email</tspan>
-      </text>
-    </a>
-
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/dev-syed-moiz-ali/">
-      <text x="100" y="12" fill="#444" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">
-        <tspan>▩</tspan>
-        <tspan dx="8">LinkedIn</tspan>
-      </text>
-    </a>
-
-    <!-- GitHub -->
-    <a href="https://github.com/Syed-Moiz-Ali">
-      <text x="220" y="12" fill="#444" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">
-        <tspan>◈</tspan>
-        <tspan dx="8">GitHub</tspan>
-      </text>
-    </a>
+    <text x="0" y="12" fill="#444" font-family="'JetBrains Mono',monospace" font-size="12">
+      <tspan fill="#666">✉</tspan>
+      <tspan dx="8" fill="#444">Email</tspan>
+    </text>
+    <text x="100" y="12" fill="#444" font-family="'JetBrains Mono',monospace" font-size="12">
+      <tspan fill="#666">▩</tspan>
+      <tspan dx="8" fill="#444">LinkedIn</tspan>
+    </text>
+    <text x="220" y="12" fill="#444" font-family="'JetBrains Mono',monospace" font-size="12">
+      <tspan fill="#666">◇</tspan>
+      <tspan dx="8" fill="#444">GitHub</tspan>
+    </text>
   </g>
 
-  <!-- ===== DIVIDER 1 ===== -->
-  <rect x="50" y="340" width="900" height="1" rx="0.5" fill="rgba(255,255,255,0.06)"/>
+  <!-- ════════════════════════════ DIVIDER ════════════════════════════ -->
+  <rect x="50" y="335" width="900" height="1" fill="rgba(255,255,255,0.05)"/>
 
-  <!-- ===== STATS ===== -->
-  <text x="50" y="378" fill="#444" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="10" letter-spacing="3">AT A GLANCE</text>
+  <!-- ════════════════════════════ STATS ════════════════════════════ -->
+  <text x="50" y="370" fill="#3a3a3a" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="4">AT A GLANCE</text>
 
-  <!-- Stats row bg -->
-  <rect x="50" y="398" width="900" height="90" rx="10" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <line x1="350" y1="398" x2="350" y2="488" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <line x1="650" y1="398" x2="650" y2="488" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <rect x="50" y="390" width="900" height="92" rx="10" fill="#0c0c0c" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="350" y1="390" x2="350" y2="482" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="650" y1="390" x2="650" y2="482" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
 
-  <!-- Stat 1 -->
-  <text x="200" y="450" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="36" font-weight="800" letter-spacing="-1.5">12</text>
-  <text x="228" y="450" text-anchor="middle" fill="url(#accentGrad)" font-family="system-ui,-apple-system,sans-serif" font-size="36" font-weight="800" letter-spacing="-1.5">+</text>
-  <text x="200" y="472" text-anchor="middle" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="10" letter-spacing="1.5">Apps Shipped</text>
+  <text x="200" y="445" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="38" font-weight="800" letter-spacing="-1.5">12</text>
+  <text x="228" y="445" text-anchor="middle" fill="url(#accent)" font-family="system-ui,-apple-system,sans-serif" font-size="38" font-weight="800" letter-spacing="-1.5">+</text>
+  <text x="200" y="468" text-anchor="middle" fill="#555" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="2">Apps Shipped</text>
 
-  <!-- Stat 2 -->
-  <text x="500" y="450" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="36" font-weight="800" letter-spacing="-1.5">14</text>
-  <text x="500" y="472" text-anchor="middle" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="10" letter-spacing="1.5">Tech Stack Items</text>
+  <text x="500" y="445" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="38" font-weight="800" letter-spacing="-1.5">14</text>
+  <text x="500" y="468" text-anchor="middle" fill="#555" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="2">Tech Stack Items</text>
 
-  <!-- Stat 3 -->
-  <text x="800" y="450" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="36" font-weight="800" letter-spacing="-1.5">30</text>
-  <text x="828" y="450" text-anchor="middle" fill="url(#accentGrad)" font-family="system-ui,-apple-system,sans-serif" font-size="36" font-weight="800" letter-spacing="-1.5">+</text>
-  <text x="800" y="472" text-anchor="middle" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="10" letter-spacing="1.5">GitHub Repos</text>
+  <text x="800" y="445" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="38" font-weight="800" letter-spacing="-1.5">30</text>
+  <text x="828" y="445" text-anchor="middle" fill="url(#accent)" font-family="system-ui,-apple-system,sans-serif" font-size="38" font-weight="800" letter-spacing="-1.5">+</text>
+  <text x="800" y="468" text-anchor="middle" fill="#555" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="2">GitHub Repos</text>
 
-  <!-- ===== DIVIDER 2 ===== -->
-  <rect x="50" y="520" width="900" height="1" rx="0.5" fill="rgba(255,255,255,0.06)"/>
+  <!-- ════════════════════════════ DIVIDER ════════════════════════════ -->
+  <rect x="50" y="512" width="900" height="1" fill="rgba(255,255,255,0.05)"/>
 
-  <!-- ===== SKILLS ===== -->
-  <text x="50" y="555" fill="#444" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="10" letter-spacing="3">SKILLS</text>
+  <!-- ════════════════════════════ SKILLS ════════════════════════════ -->
+  <text x="50" y="548" fill="#3a3a3a" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="4">SKILLS</text>
 
-  <!-- Skills grid bg -->
-  <rect x="50" y="572" width="900" height="170" rx="10" fill="#0f0f0f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <rect x="50" y="565" width="900" height="164" rx="10" fill="#0c0c0c" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="50" y1="606" x2="950" y2="606" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="50" y1="647" x2="950" y2="647" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="50" y1="688" x2="950" y2="688" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
 
   <!-- Row 1: Mobile -->
-  <text x="72" y="598" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9" letter-spacing="2">MOBILE</text>
-  <rect x="140" y="586" width="54" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="167" y="602" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Flutter</text>
-  <rect x="200" y="586" width="40" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="220" y="602" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Dart</text>
-  <rect x="246" y="586" width="58" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="275" y="602" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Riverpod</text>
+  <text x="72" y="590" fill="#555" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="2">MOBILE</text>
+  <rect x="140" y="578" width="56" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="168" y="594" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Flutter</text>
+  <rect x="202" y="578" width="42" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="223" y="594" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Dart</text>
+  <rect x="250" y="578" width="60" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="280" y="594" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Riverpod</text>
 
   <!-- Row 2: Backend -->
-  <text x="72" y="642" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9" letter-spacing="2">BACKEND</text>
-  <rect x="140" y="630" width="56" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="168" y="646" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Node.js</text>
-  <rect x="202" y="630" width="56" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="230" y="646" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Express</text>
-  <rect x="264" y="630" width="68" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="298" y="646" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">TypeScript</text>
-  <rect x="338" y="630" width="54" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="365" y="646" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Python</text>
+  <text x="72" y="631" fill="#555" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="2">BACKEND</text>
+  <rect x="140" y="619" width="58" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="169" y="635" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Node.js</text>
+  <rect x="204" y="619" width="58" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="233" y="635" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Express</text>
+  <rect x="268" y="619" width="70" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="303" y="635" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">TypeScript</text>
+  <rect x="344" y="619" width="56" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="372" y="635" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Python</text>
 
   <!-- Row 3: Cloud & Data -->
-  <text x="72" y="686" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9" letter-spacing="2">CLOUD &amp; DATA</text>
-  <rect x="184" y="674" width="60" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="214" y="690" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Firebase</text>
-  <rect x="250" y="674" width="40" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="270" y="690" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Hive</text>
-  <rect x="296" y="674" width="70" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="331" y="690" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">REST APIs</text>
+  <text x="72" y="672" fill="#555" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="2">CLOUD &amp; DATA</text>
+  <rect x="184" y="660" width="62" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="215" y="676" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Firebase</text>
+  <rect x="252" y="660" width="42" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="273" y="676" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Hive</text>
+  <rect x="300" y="660" width="72" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="336" y="676" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">REST APIs</text>
 
   <!-- Row 4: Tools -->
-  <text x="72" y="730" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9" letter-spacing="2">TOOLS</text>
-  <rect x="132" y="718" width="30" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="147" y="734" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Git</text>
-  <rect x="168" y="718" width="46" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="191" y="734" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Figma</text>
-  <rect x="220" y="718" width="32" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="236" y="734" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Dio</text>
-  <rect x="258" y="718" width="58" height="24" rx="5" fill="#161616" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="287" y="734" text-anchor="middle" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Postman</text>
+  <text x="72" y="713" fill="#555" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="2">TOOLS</text>
+  <rect x="132" y="701" width="34" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="149" y="717" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Git</text>
+  <rect x="172" y="701" width="48" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="196" y="717" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Figma</text>
+  <rect x="226" y="701" width="34" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="243" y="717" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Dio</text>
+  <rect x="266" y="701" width="60" height="24" rx="6" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.2)" stroke-width="0.5"/>
+  <text x="296" y="717" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono',monospace" font-size="10">Postman</text>
 
-  <!-- ===== DIVIDER 3 ===== -->
-  <rect x="50" y="775" width="900" height="1" rx="0.5" fill="rgba(255,255,255,0.06)"/>
+  <!-- ════════════════════════════ DIVIDER ════════════════════════════ -->
+  <rect x="50" y="760" width="900" height="1" fill="rgba(255,255,255,0.05)"/>
 
-  <!-- ===== PROJECTS ===== -->
-  <text x="50" y="810" fill="#444" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="10" letter-spacing="3">FEATURED PROJECTS</text>
+  <!-- ════════════════════════════ PROJECTS ════════════════════════════ -->
+  <text x="50" y="796" fill="#3a3a3a" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="4">FEATURED PROJECTS</text>
 
   <!-- Project 1: Blupen -->
-  <rect x="50" y="830" width="900" height="100" rx="10" fill="#0f0f0f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <rect x="50" y="830" width="2" height="100" rx="1" fill="#7C3AED" opacity="0"/>
-  <text x="72" y="860" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="600">Blupen</text>
-  <text x="72" y="882" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">Education platform designed to streamline college admissions</text>
-  <text x="72" y="900" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">and track student placements with a minimalist UI.</text>
-
-  <!-- Tags -->
-  <rect x="72" y="914" width="50" height="20" rx="4" fill="rgba(124,58,237,0.1)"/>
-  <text x="97" y="928" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9">Flutter</text>
-  <rect x="128" y="914" width="36" height="20" rx="4" fill="rgba(124,58,237,0.1)"/>
-  <text x="146" y="928" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9">Dart</text>
-  <rect x="170" y="914" width="70" height="20" rx="4" fill="rgba(124,58,237,0.1)"/>
-  <text x="205" y="928" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9">UX Design</text>
-
-  <!-- Arrow -->
-  <rect x="900" y="852" width="28" height="28" rx="8" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <text x="914" y="871" text-anchor="middle" fill="#666" font-family="system-ui,sans-serif" font-size="12">↗</text>
+  <rect x="50" y="815" width="900" height="105" rx="10" fill="#0c0c0c" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <rect x="50" y="815" width="2" height="105" rx="1" fill="#7C3AED"/>
+  <text x="74" y="848" fill="#E8E8E8" font-family="system-ui,-apple-system,sans-serif" font-size="15" font-weight="600">Blupen</text>
+  <text x="74" y="872" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">Education platform designed to streamline college admissions</text>
+  <text x="74" y="890" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">and track student placements with a minimalist UI.</text>
+  <rect x="74" y="902" width="46" height="18" rx="4" fill="rgba(124,58,237,0.12)"/>
+  <text x="97" y="915" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="8">Flutter</text>
+  <rect x="126" y="902" width="34" height="18" rx="4" fill="rgba(124,58,237,0.12)"/>
+  <text x="143" y="915" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="8">Dart</text>
+  <rect x="166" y="902" width="64" height="18" rx="4" fill="rgba(124,58,237,0.12)"/>
+  <text x="198" y="915" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="8">UX Design</text>
+  <rect x="900" y="838" width="28" height="28" rx="8" fill="#0f0f0f" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="914" y="857" text-anchor="middle" fill="#555" font-family="system-ui,sans-serif" font-size="14">↗</text>
 
   <!-- Project 2: Vakalat Nama -->
-  <rect x="50" y="935" width="900" height="100" rx="10" fill="#0f0f0f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="72" y="965" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="600">Vakalat Nama</text>
-  <text x="72" y="987" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">Complete legal case management application tailored for</text>
-  <text x="72" y="1005" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">tracking hearing dates and organizing legal workflows.</text>
-
-  <rect x="72" y="1019" width="50" height="20" rx="4" fill="rgba(124,58,237,0.1)"/>
-  <text x="97" y="1033" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9">Flutter</text>
-  <rect x="128" y="1019" width="78" height="20" rx="4" fill="rgba(124,58,237,0.1)"/>
-  <text x="167" y="1033" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9">Architecture</text>
-  <rect x="212" y="1019" width="82" height="20" rx="4" fill="rgba(124,58,237,0.1)"/>
-  <text x="253" y="1033" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9">Data Models</text>
-
-  <rect x="900" y="957" width="28" height="28" rx="8" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <text x="914" y="976" text-anchor="middle" fill="#666" font-family="system-ui,sans-serif" font-size="12">↗</text>
+  <rect x="50" y="925" width="900" height="105" rx="10" fill="#0c0c0c" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <rect x="50" y="925" width="2" height="105" rx="1" fill="#A78BFA"/>
+  <text x="74" y="958" fill="#E8E8E8" font-family="system-ui,-apple-system,sans-serif" font-size="15" font-weight="600">Vakalat Nama</text>
+  <text x="74" y="982" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">Complete legal case management application tailored for</text>
+  <text x="74" y="1000" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">tracking hearing dates and organizing legal workflows.</text>
+  <rect x="74" y="1012" width="46" height="18" rx="4" fill="rgba(124,58,237,0.12)"/>
+  <text x="97" y="1025" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="8">Flutter</text>
+  <rect x="126" y="1012" width="72" height="18" rx="4" fill="rgba(124,58,237,0.12)"/>
+  <text x="162" y="1025" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="8">Architecture</text>
+  <rect x="204" y="1012" width="76" height="18" rx="4" fill="rgba(124,58,237,0.12)"/>
+  <text x="242" y="1025" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="8">Data Models</text>
+  <rect x="900" y="948" width="28" height="28" rx="8" fill="#0f0f0f" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="914" y="967" text-anchor="middle" fill="#555" font-family="system-ui,sans-serif" font-size="14">↗</text>
 
   <!-- Project 3: Train-Era Fitness Club -->
-  <rect x="50" y="1040" width="900" height="100" rx="10" fill="#0f0f0f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="72" y="1070" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="600">Train-Era Fitness Club (TEFC)</text>
-  <text x="72" y="1092" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">Technical integration handling complex event models, scheduling</text>
-  <text x="72" y="1110" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">logic, and automated booking confirmations.</text>
+  <rect x="50" y="1035" width="900" height="105" rx="10" fill="#0c0c0c" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <rect x="50" y="1035" width="2" height="105" rx="1" fill="#7C3AED"/>
+  <text x="74" y="1068" fill="#E8E8E8" font-family="system-ui,-apple-system,sans-serif" font-size="15" font-weight="600">Train-Era Fitness Club (TEFC)</text>
+  <text x="74" y="1092" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">Technical integration handling complex event models,</text>
+  <text x="74" y="1110" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">scheduling logic, and automated booking confirmations.</text>
+  <rect x="74" y="1122" width="46" height="18" rx="4" fill="rgba(124,58,237,0.12)"/>
+  <text x="97" y="1135" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="8">Flutter</text>
+  <rect x="126" y="1122" width="94" height="18" rx="4" fill="rgba(124,58,237,0.12)"/>
+  <text x="173" y="1135" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="8">HTML Templates</text>
+  <rect x="226" y="1122" width="80" height="18" rx="4" fill="rgba(124,58,237,0.12)"/>
+  <text x="266" y="1135" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="8">API Integration</text>
+  <rect x="900" y="1058" width="28" height="28" rx="8" fill="#0f0f0f" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="914" y="1077" text-anchor="middle" fill="#555" font-family="system-ui,sans-serif" font-size="14">↗</text>
 
-  <rect x="72" y="1124" width="50" height="20" rx="4" fill="rgba(124,58,237,0.1)"/>
-  <text x="97" y="1138" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9">Flutter</text>
-  <rect x="128" y="1124" width="100" height="20" rx="4" fill="rgba(124,58,237,0.1)"/>
-  <text x="178" y="1138" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9">HTML Templates</text>
-  <rect x="234" y="1124" width="86" height="20" rx="4" fill="rgba(124,58,237,0.1)"/>
-  <text x="277" y="1138" text-anchor="middle" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="9">API Integration</text>
+  <text x="50" y="1180" fill="#3a3a3a" font-family="'JetBrains Mono',monospace" font-size="10">Additional private repos available on request.</text>
 
-  <rect x="900" y="1062" width="28" height="28" rx="8" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <text x="914" y="1081" text-anchor="middle" fill="#666" font-family="system-ui,sans-serif" font-size="12">↗</text>
+  <!-- ════════════════════════════ DIVIDER ════════════════════════════ -->
+  <rect x="50" y="1210" width="900" height="1" fill="rgba(255,255,255,0.05)"/>
 
-  <!-- Private repos note -->
-  <text x="72" y="1172" fill="#444" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">Additional private repos available on request.</text>
+  <!-- ════════════════════════════ WHAT I BUILD ════════════════════════════ -->
+  <text x="50" y="1246" fill="#3a3a3a" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="4">WHAT I BUILD</text>
 
-  <!-- ===== WHAT I BUILD ===== -->
-  <text x="50" y="1210" fill="#444" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="10" letter-spacing="3">WHAT I BUILD</text>
+  <!-- Card 1 -->
+  <rect x="50" y="1265" width="286" height="115" rx="10" fill="#0c0c0c" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <rect x="50" y="1265" width="2" height="115" rx="1" fill="#7C3AED"/>
+  <text x="74" y="1297" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="1">📱  Mobile Apps</text>
+  <text x="74" y="1322" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">Flutter apps for iOS &amp; Android —</text>
+  <text x="74" y="1340" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">production-ready with smooth</text>
+  <text x="74" y="1358" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">animations and performance.</text>
 
-  <!-- Card 1: Mobile Apps -->
-  <rect x="50" y="1230" width="286" height="110" rx="10" fill="#0f0f0f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <rect x="50" y="1230" width="2" height="110" rx="1" fill="#7C3AED"/>
-  <text x="72" y="1262" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="10" letter-spacing="1">📱  Mobile Apps</text>
-  <text x="72" y="1288" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">Flutter apps for iOS &amp; Android —</text>
-  <text x="72" y="1306" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">production-ready with smooth</text>
-  <text x="72" y="1324" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">animations and performance.</text>
+  <!-- Card 2 -->
+  <rect x="357" y="1265" width="286" height="115" rx="10" fill="#0c0c0c" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <rect x="357" y="1265" width="2" height="115" rx="1" fill="#22D3EE"/>
+  <text x="381" y="1297" fill="#67E8F9" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="1">🔌  API Integration</text>
+  <text x="381" y="1322" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">REST, Firebase, third-party SDKs —</text>
+  <text x="381" y="1340" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">clean data layers with error</text>
+  <text x="381" y="1358" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">handling and caching.</text>
 
-  <!-- Card 2: API Integration -->
-  <rect x="357" y="1230" width="286" height="110" rx="10" fill="#0f0f0f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <rect x="357" y="1230" width="2" height="110" rx="1" fill="#A78BFA"/>
-  <text x="379" y="1262" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="10" letter-spacing="1">🔌  API Integration</text>
-  <text x="379" y="1288" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">REST, Firebase, third-party SDKs —</text>
-  <text x="379" y="1306" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">clean data layers with error</text>
-  <text x="379" y="1324" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">handling and caching.</text>
+  <!-- Card 3 -->
+  <rect x="664" y="1265" width="286" height="115" rx="10" fill="#0c0c0c" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <rect x="664" y="1265" width="2" height="115" rx="1" fill="#7C3AED"/>
+  <text x="688" y="1297" fill="#A78BFA" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="1">⚡  State Management</text>
+  <text x="688" y="1322" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">Riverpod-first architecture —</text>
+  <text x="688" y="1340" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">scalable, testable, and</text>
+  <text x="688" y="1358" fill="#555" font-family="'JetBrains Mono',monospace" font-size="11">maintainable at any app size.</text>
 
-  <!-- Card 3: State Management -->
-  <rect x="664" y="1230" width="286" height="110" rx="10" fill="#0f0f0f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <rect x="664" y="1230" width="2" height="110" rx="1" fill="#7C3AED"/>
-  <text x="686" y="1262" fill="#A78BFA" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="10" letter-spacing="1">⚡  State Management</text>
-  <text x="686" y="1288" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">Riverpod-first architecture —</text>
-  <text x="686" y="1306" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">scalable, testable, and</text>
-  <text x="686" y="1324" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">maintainable at any app size.</text>
+  <!-- ════════════════════════════ DIVIDER ════════════════════════════ -->
+  <rect x="50" y="1415" width="900" height="1" fill="rgba(255,255,255,0.05)"/>
 
-  <!-- ===== DIVIDER 4 ===== -->
-  <rect x="50" y="1370" width="900" height="1" rx="0.5" fill="rgba(255,255,255,0.06)"/>
+  <!-- ════════════════════════════ CONTACT ════════════════════════════ -->
+  <rect x="50" y="1440" width="900" height="140" rx="12" fill="#0c0c0c" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <rect x="50" y="1440" width="900" height="140" rx="12" fill="url(#contactGrad)"/>
+  <rect x="50" y="1440" width="900" height="2" rx="1" fill="url(#accent)" opacity="0.4"/>
 
-  <!-- ===== CONTACT ===== -->
-  <rect x="50" y="1395" width="900" height="130" rx="12" fill="#0f0f0f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <rect x="50" y="1395" width="900" height="130" rx="12" fill="url(#contactGrad)"/>
+  <text x="74" y="1482" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="26" font-weight="700" letter-spacing="-0.5">Let's build something.</text>
+  <text x="74" y="1510" fill="#555" font-family="'JetBrains Mono',monospace" font-size="12">Open to Flutter Developer and Mobile App Engineer roles.</text>
 
-  <text x="72" y="1435" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="24" font-weight="700" letter-spacing="-0.5">Let's build something.</text>
-  <text x="72" y="1460" fill="#666" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="12">Open to Flutter Developer and Mobile App Engineer roles.</text>
+  <rect x="74" y="1535" width="160" height="32" rx="8" fill="#7C3AED"/>
+  <text x="100" y="1556" fill="#FFFFFF" font-family="'JetBrains Mono',monospace" font-size="11">✉  Send an email</text>
 
-  <!-- Email btn -->
-  <rect x="72" y="1480" width="150" height="32" rx="8" fill="#7C3AED"/>
-  <text x="96" y="1500" fill="#FFFFFF" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">✉  Send an email</text>
+  <rect x="246" y="1535" width="120" height="32" rx="8" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="272" y="1556" fill="#CCC" font-family="'JetBrains Mono',monospace" font-size="11">▩  LinkedIn</text>
 
-  <!-- LinkedIn btn -->
-  <rect x="234" y="1480" width="110" height="32" rx="8" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <text x="258" y="1500" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">▩  LinkedIn</text>
+  <rect x="378" y="1535" width="110" height="32" rx="8" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="402" y="1556" fill="#CCC" font-family="'JetBrains Mono',monospace" font-size="11">◇  GitHub</text>
 
-  <!-- GitHub btn -->
-  <rect x="356" y="1480" width="100" height="32" rx="8" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <text x="378" y="1500" fill="#E8E8E8" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="11">◈  GitHub</text>
+  <!-- ════════════════════════════ DIVIDER ════════════════════════════ -->
+  <rect x="50" y="1615" width="900" height="1" fill="rgba(255,255,255,0.05)"/>
 
-  <!-- ===== DIVIDER 5 ===== -->
-  <rect x="50" y="1555" width="900" height="1" rx="0.5" fill="rgba(255,255,255,0.06)"/>
-
-  <!-- ===== FOOTER ===== -->
-  <text x="500" y="1585" text-anchor="middle" fill="#444" font-family="'JetBrains Mono','Fira Code','DM Mono',monospace" font-size="10" letter-spacing="2">SYED MOIZ ALI · FLUTTER DEVELOPER · 2026</text>
+  <!-- ════════════════════════════ FOOTER ════════════════════════════ -->
+  <text x="500" y="1645" text-anchor="middle" fill="#3a3a3a" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="3">SYED MOIZ ALI · FLUTTER DEVELOPER · 2026</text>
 </svg>
