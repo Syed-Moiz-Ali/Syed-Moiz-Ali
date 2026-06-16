@@ -35,40 +35,40 @@ function getRepositoryName(item) {
 
 function buildMarkdown(prs) {
   if (!prs.length) {
-    return [
-      "| Repository | Merged PRs | Recent Work |",
-      "|---|---:|---|",
-      "| No merged PRs found yet | - | Start contributing and this section will update automatically |",
-    ].join("\n");
+    return `<p align="center">No merged PRs found yet. Start contributing and this section will update automatically.</p>`;
   }
 
   const grouped = new Map();
 
   for (const pr of prs) {
     const repo = getRepositoryName(pr);
-
     if (!grouped.has(repo)) {
       grouped.set(repo, []);
     }
-
     grouped.get(repo).push(pr);
   }
 
-  const rows = [
-    "| Repository | Merged PRs | Recent Work |",
-    "|---|---:|---|",
-  ];
+  const repoCount = grouped.size;
+  const totalPRs = prs.length;
+
+  const lines = [];
+  lines.push(`<p align="center"><sub>${totalPRs} merged PRs across ${repoCount} repositories</sub></p>`);
+  lines.push(``);
 
   for (const [repo, repoPRs] of grouped.entries()) {
+    const encoded = repo.replace(/[^a-zA-Z0-9/_-]/g, "_");
     const recent = repoPRs
-      .slice(0, 3)
+      .slice(0, 2)
       .map((pr) => `[${escapeMarkdown(pr.title)}](${pr.html_url})`)
-      .join("<br />");
+      .join(" · ");
 
-    rows.push(`| [${repo}](https://github.com/${repo}) | ${repoPRs.length} | ${recent} |`);
+    lines.push(`<a href="https://github.com/${repo}"><img src="https://img.shields.io/static/v1?label=${encoded}&message=${repoPRs.length}+merged+PRs&color=7C3AED&style=for-the-badge&logo=github" alt="${repo}" /></a>`);
+    lines.push(`<br />`);
+    lines.push(`<sub>Recent: ${recent}</sub>`);
+    lines.push(`<br /><br />`);
   }
 
-  return rows.join("\n");
+  return lines.join(`\n`);
 }
 
 function escapeMarkdown(text) {

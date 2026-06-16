@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.98" />
+    </linearGradient>
+    <linearGradient id="chipGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.1" />
+    </linearGradient>
+    <linearGradient id="chipGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.1" />
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#7C3AED" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="520" fill="url(#bgGrad)" rx="16" />
+
+  <!-- Subtle grid -->
+  <g opacity="0.03">
+    <line x1="0" y1="0" x2="0" y2="520" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="125" y1="0" x2="125" y2="520" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="250" y1="0" x2="250" y2="520" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="375" y1="0" x2="375" y2="520" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="500" y1="0" x2="500" y2="520" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="625" y1="0" x2="625" y2="520" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="750" y1="0" x2="750" y2="520" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="875" y1="0" x2="875" y2="520" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="1000" y1="0" x2="1000" y2="520" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="0" y1="0" x2="1000" y2="0" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="0" y1="130" x2="1000" y2="130" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="0" y1="260" x2="1000" y2="260" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="0" y1="390" x2="1000" y2="390" stroke="#6366F1" stroke-width="0.5" />
+    <line x1="0" y1="520" x2="1000" y2="520" stroke="#6366F1" stroke-width="0.5" />
+  </g>
+
+  <!-- Section Title -->
+  <text x="500" y="45" text-anchor="middle" fill="#CBD5E1" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" letter-spacing="0.5">Featured Projects</text>
+  <rect x="420" y="55" width="160" height="2" rx="1" fill="url(#accent1)" />
+
+  <!-- Card 1: nullfeed-flutter -->
+  <g filter="url(#cardShadow)">
+    <rect x="30" y="80" width="455" height="185" rx="10" fill="url(#cardGrad)" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.25" />
+    <rect x="30" y="80" width="3" height="185" rx="1.5" fill="url(#accent1)" />
+    <text x="50" y="115" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="16" font-weight="600">nullfeed-flutter</text>
+    <text x="50" y="140" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">Flutter contributions focused on bug fixes,</text>
+    <text x="50" y="157" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">performance, and state handling.</text>
+    <!-- Tech chips -->
+    <rect x="50" y="175" width="55" height="20" rx="4" fill="url(#chipGrad1)" />
+    <text x="77" y="189" text-anchor="middle" fill="#A78BFA" font-family="system-ui, sans-serif" font-size="10" font-weight="500">Flutter</text>
+    <rect x="112" y="175" width="40" height="20" rx="4" fill="url(#chipGrad1)" />
+    <text x="132" y="189" text-anchor="middle" fill="#A78BFA" font-family="system-ui, sans-serif" font-size="10" font-weight="500">Dart</text>
+    <rect x="159" y="175" width="55" height="20" rx="4" fill="url(#chipGrad2)" />
+    <text x="186" y="189" text-anchor="middle" fill="#67E8F9" font-family="system-ui, sans-serif" font-size="10" font-weight="500">Riverpod</text>
+    <a href="https://github.com/Syed-Moiz-Ali/nullfeed-flutter">
+      <rect x="380" y="240" width="90" height="16" rx="8" fill="none" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.5" />
+      <text x="425" y="252" text-anchor="middle" fill="#7C3AED" font-family="system-ui, sans-serif" font-size="10">View →</text>
+    </a>
+  </g>
+
+  <!-- Card 2: gunpla_hub -->
+  <g filter="url(#cardShadow)">
+    <rect x="515" y="80" width="455" height="185" rx="10" fill="url(#cardGrad)" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.25" />
+    <rect x="515" y="80" width="3" height="185" rx="1.5" fill="url(#accent2)" />
+    <text x="535" y="115" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="16" font-weight="600">gunpla_hub</text>
+    <text x="535" y="140" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">Mobile app project with clean Flutter</text>
+    <text x="535" y="157" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">structure and UI.</text>
+    <rect x="535" y="175" width="55" height="20" rx="4" fill="url(#chipGrad1)" />
+    <text x="562" y="189" text-anchor="middle" fill="#A78BFA" font-family="system-ui, sans-serif" font-size="10" font-weight="500">Flutter</text>
+    <rect x="597" y="175" width="40" height="20" rx="4" fill="url(#chipGrad1)" />
+    <text x="617" y="189" text-anchor="middle" fill="#A78BFA" font-family="system-ui, sans-serif" font-size="10" font-weight="500">Dart</text>
+    <rect x="644" y="175" width="48" height="20" rx="4" fill="url(#chipGrad2)" />
+    <text x="668" y="189" text-anchor="middle" fill="#67E8F9" font-family="system-ui, sans-serif" font-size="10" font-weight="500">REST</text>
+    <a href="https://github.com/Syed-Moiz-Ali/gunpla_hub">
+      <rect x="865" y="240" width="90" height="16" rx="8" fill="none" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.5" />
+      <text x="910" y="252" text-anchor="middle" fill="#7C3AED" font-family="system-ui, sans-serif" font-size="10">View →</text>
+    </a>
+  </g>
+
+  <!-- Card 3: KiranaInventoryTracker -->
+  <g filter="url(#cardShadow)">
+    <rect x="30" y="290" width="455" height="185" rx="10" fill="url(#cardGrad)" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.25" />
+    <rect x="30" y="290" width="3" height="185" rx="1.5" fill="url(#accent1)" />
+    <text x="50" y="325" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="16" font-weight="600">KiranaInventoryTracker</text>
+    <text x="50" y="350" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">Inventory tracking app for practical</text>
+    <text x="50" y="367" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">business workflows and use cases.</text>
+    <rect x="50" y="385" width="55" height="20" rx="4" fill="url(#chipGrad1)" />
+    <text x="77" y="399" text-anchor="middle" fill="#A78BFA" font-family="system-ui, sans-serif" font-size="10" font-weight="500">Flutter</text>
+    <rect x="112" y="385" width="40" height="20" rx="4" fill="url(#chipGrad1)" />
+    <text x="132" y="399" text-anchor="middle" fill="#A78BFA" font-family="system-ui, sans-serif" font-size="10" font-weight="500">Dart</text>
+    <rect x="159" y="385" width="52" height="20" rx="4" fill="url(#chipGrad2)" />
+    <text x="185" y="399" text-anchor="middle" fill="#67E8F9" font-family="system-ui, sans-serif" font-size="10" font-weight="500">Hive</text>
+    <a href="https://github.com/Syed-Moiz-Ali/KiranaInventoryTracker">
+      <rect x="380" y="450" width="90" height="16" rx="8" fill="none" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.5" />
+      <text x="425" y="462" text-anchor="middle" fill="#7C3AED" font-family="system-ui, sans-serif" font-size="10">View →</text>
+    </a>
+  </g>
+
+  <!-- Card 4: flockui -->
+  <g filter="url(#cardShadow)">
+    <rect x="515" y="290" width="455" height="185" rx="10" fill="url(#cardGrad)" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.25" />
+    <rect x="515" y="290" width="3" height="185" rx="1.5" fill="url(#accent2)" />
+    <text x="535" y="325" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="16" font-weight="600">flockui</text>
+    <text x="535" y="350" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">Flutter UI component and reusable</text>
+    <text x="535" y="367" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">interface work and contributions.</text>
+    <rect x="535" y="385" width="55" height="20" rx="4" fill="url(#chipGrad1)" />
+    <text x="562" y="399" text-anchor="middle" fill="#A78BFA" font-family="system-ui, sans-serif" font-size="10" font-weight="500">Flutter</text>
+    <rect x="597" y="385" width="40" height="20" rx="4" fill="url(#chipGrad1)" />
+    <text x="617" y="399" text-anchor="middle" fill="#A78BFA" font-family="system-ui, sans-serif" font-size="10" font-weight="500">Dart</text>
+    <rect x="644" y="385" width="52" height="20" rx="4" fill="url(#chipGrad2)" />
+    <text x="670" y="399" text-anchor="middle" fill="#67E8F9" font-family="system-ui, sans-serif" font-size="10" font-weight="500">UI</text>
+    <a href="https://github.com/Syed-Moiz-Ali/flockui">
+      <rect x="865" y="450" width="90" height="16" rx="8" fill="none" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.5" />
+      <text x="910" y="462" text-anchor="middle" fill="#7C3AED" font-family="system-ui, sans-serif" font-size="10">View →</text>
+    </a>
+  </g>
+
+  <!-- Decorative -->
+  <circle cx="970" cy="495" r="80" fill="url(#accent1)" opacity="0.03" />
+  <circle cx="30" cy="495" r="60" fill="url(#accent2)" opacity="0.03" />
+</svg>

@@ -57,32 +57,13 @@
 
 ### What I Build
 
-| Focus | Work |
-|---|---|
-| Mobile Apps | Android and iOS apps with Flutter |
-| UI Engineering | Clean, responsive, user-friendly interfaces |
-| API Integration | REST APIs, authentication, and backend services |
-| Firebase | Auth, database, storage, and cloud features |
-| State Management | Scalable app structure with Riverpod |
-| Performance | Bug fixes, smoother loading, and crash reduction |
+<img src="assets/what-i-build.svg" width="100%" />
 
 ---
 
 ### Featured Projects
 
-| Project | Description |
-|---|---|
-| [nullfeed-flutter](https://github.com/Syed-Moiz-Ali/nullfeed-flutter) | Flutter app contributions focused on fixes, performance, and state handling |
-| [gunpla_hub](https://github.com/Syed-Moiz-Ali/gunpla_hub) | Mobile app project with clean Flutter structure and UI |
-| [KiranaInventoryTracker](https://github.com/Syed-Moiz-Ali/KiranaInventoryTracker) | Inventory tracking app for practical business use cases |
-| [flockui](https://github.com/Syed-Moiz-Ali/flockui) | Flutter UI component and reusable interface work |
-
-<p align="center">
-  <a href="https://github.com/Syed-Moiz-Ali/nullfeed-flutter"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Syed-Moiz-Ali&repo=nullfeed-flutter&theme=transparent&hide_border=true&title_color=7C3AED&text_color=94A3B8&icon_color=7C3AED" /></a>
-  <a href="https://github.com/Syed-Moiz-Ali/gunpla_hub"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Syed-Moiz-Ali&repo=gunpla_hub&theme=transparent&hide_border=true&title_color=7C3AED&text_color=94A3B8&icon_color=7C3AED" /></a>
-  <a href="https://github.com/Syed-Moiz-Ali/KiranaInventoryTracker"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Syed-Moiz-Ali&repo=KiranaInventoryTracker&theme=transparent&hide_border=true&title_color=7C3AED&text_color=94A3B8&icon_color=7C3AED" /></a>
-  <a href="https://github.com/Syed-Moiz-Ali/flockui"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Syed-Moiz-Ali&repo=flockui&theme=transparent&hide_border=true&title_color=7C3AED&text_color=94A3B8&icon_color=7C3AED" /></a>
-</p>
+<img src="assets/featured-projects.svg" width="100%" />
 
 > Some client projects are private. I can share details, screenshots, or demos on request.
 
@@ -90,12 +71,12 @@
 
 ### Open Source Contributions
 
+<p align="center">
+  <sub>Merged PRs and contributions across public repositories. Updated daily via GitHub Actions.</sub>
+</p>
+
 <!-- OSS-CONTRIBUTIONS:START -->
-
-| Repository | Merged PRs | Recent Work |
-|---|---:|---|
-| Loading... | - | Updates daily via GitHub Actions. |
-
+<p align="center"><sub>Loading contribution data...</sub></p>
 <!-- OSS-CONTRIBUTIONS:END -->
 
 ---
